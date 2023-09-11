@@ -30,9 +30,9 @@ pub enum GeneratorSubcommands {
 #[derive(FromArgs, PartialEq, Debug)]
 #[argh(subcommand, name = "certnames", description = "generate certnames")]
 pub struct Certnames {
-    #[argh(option, description = "change input file path")]
+    #[argh(option, default = "String::from(\"list.txt\")", description = "change input file path")]
     pub from: String,
-    #[argh(option, description = "change output file path")]
+    #[argh(option, default = "String::from(\"list.txt\")", description = "change output file path")]
     pub to: String,
     #[argh(switch, short = 'd', description = "disable generation")]
     pub disable_generation: bool,
@@ -43,9 +43,9 @@ pub struct Certnames {
 #[derive(FromArgs, PartialEq, Debug)]
 #[argh(subcommand, name = "emails", description = "generate emails")]
 pub struct Emails {
-    #[argh(option, description = "change input file path")]
+    #[argh(option, default = "String::from(\"list.txt\")", description = "change input file path")]
     pub from: String,
-    #[argh(option, description = "change output file path")]
+    #[argh(option, default = "String::from(\"list.txt\")", description = "change output file path")]
     pub to: String,
     #[argh(
         option,
